@@ -1,1 +1,1 @@
-# eurhcre-musings
+# euchre-musings
