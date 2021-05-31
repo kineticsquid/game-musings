@@ -1,1 +1,3 @@
 # euchre-musings
+
+Euchre musings
