@@ -1,5 +1,6 @@
 import math
-import random
+import numpy as np
+import time
 suits = ['Hearts', 'Diamonds', 'Spades', 'Clubs']
 cards = ['9', '10', 'Jack', 'Queen', 'King', 'Ace']
 
@@ -98,27 +99,44 @@ def get_remaining_deck(deck, hand):
         new_deck.remove(card)
     return new_deck
 
-hand_size = 5
-print("Deck size: %s" % len(deck))
-print("Hand size: %s" % hand_size)
-print("Calculated combinations: %s" % int(combinations(len(deck), hand_size)))
-enumerate_hands([], deck, hand_size)
-print("Enumerated combinations: %s" % len(all_possible_hands))
-# print(all_possible_hands)
+def calculate_all_possible_scores():
 
-for i in range(1, 10):
-    random_hand_index = int(random.random() * len(all_possible_hands))
-    random_hand = all_possible_hands[random_hand_index]
-    print(random_hand)
-    remaining_deck = get_remaining_deck(deck_copy, random_hand)
-    random_trump_card_index = int(random.random() * len(remaining_deck))
-    random_trump_card = remaining_deck[random_trump_card_index]
-    print(random_trump_card)
-    print("Dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
-                                                      dealer=True))
-    print("Non-dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
-                                                          dealer=False))
-    print("Second round score: %s" % score_hand_second_round(random_hand))
+    hand_size = 5
+    print("Deck size: %s" % len(deck))
+    print("Hand size: %s" % hand_size)
+    print("Calculated combinations: %s" % int(combinations(len(deck), hand_size)))
+    enumerate_hands([], deck, hand_size)
+    print("Enumerated combinations: %s" % len(all_possible_hands))
+    # print(all_possible_hands)
+
+    # num_possible_scores = len(all_possible_hands) * (len(deck_copy) - hand_size)
+    # dealer_scores = np.zeros(num_possible_scores, dtype=int)
+    # non_dealer_scores = np.zeros(num_possible_scores, dtype=int)
+    # second_round_scores = np.zeros(num_possible_scores, dtype=int)
+
+    dealer_scores = []
+    non_dealer_scores = []
+    second_round_scores = []
+
+    count = 0
+    start_time = time.time()
+    for hand in all_possible_hands:
+        remaining_deck = get_remaining_deck(deck_copy, hand)
+        for trump_card in remaining_deck:
+            dealer_scores.append(score_hand_first_round(hand, trump_card, dealer=True))
+            non_dealer_scores.append(score_hand_first_round(hand, trump_card, dealer=False))
+            second_round_scores.append(score_hand_second_round(hand))
+
+            count += 1
+            if count % 100000 == 0:
+                print("%s combinations processed - %.1f sec" % (count, time.time() - start_time))
+
+    print("%s combinations processed - %.1f sec" % (count, time.time() - start_time))
+    dealer_scores_array = np.array(dealer_scores)
+    non_dealer_scores_array = np.array(non_dealer_scores)
+    second_round_scores_array = np.array(second_round_scores)
+
+    return dealer_scores_array, non_dealer_scores_array, second_round_scores_array
 
 
 
