@@ -59,39 +59,62 @@ def score_card(card, trump_suit):
     return score
 
 def score_hand_first_round(hand, trump_card, dealer):
-    score = 0
     suits_found = []
+    card_scores = []
     for card in hand:
-        score += score_card(card, trump_card[1])
-        if card[1] not in suits_found:
-            suits_found.append(card[1])
+        card_scores.append(score_card(card, trump_card[1]))
+        if is_trump(trump_card[1], card):
+            if 'trump' not in suits_found:
+                suits_found.append('trump')
+        else:
+            if card[1] not in suits_found:
+                suits_found.append(card[1])
+    trump_card_score = score_card(trump_card, trump_card[1])
+    if dealer:
+        card_scores.append(trump_card_score)
+        lowest_card = min(card_scores)
+        card_scores.remove(lowest_card)
+        score = sum(card_scores)
+    else:
+        score = sum(card_scores) - trump_card_score
     if len(suits_found) <= 2:
         score += 1
-    if trump_card is not None:
-        trump_card_score = score_card(trump_card, trump_card[1])
-        if dealer:
-            score += trump_card_score
-        else:
-            score -= trump_card_score
     return score
 
 def score_hand_second_round(hand):
     max_score = 0
     for suit in suits:
         score = 0
+        suits_found = []
         for card in hand:
             score += score_card(card, suit)
+            if is_trump(suit, card):
+                if 'trump' not in suits_found:
+                    suits_found.append('trump')
+            else:
+                if card[1] not in suits_found:
+                    suits_found.append(card[1])
+        if len(suits_found) <= 2:
+            score += 1
         if score > max_score:
             max_score = score
 
-    suits_found = []
-    for card in hand:
-        if card[1] not in suits_found:
-            suits_found.append(card[1])
-    if len(suits_found) <= 2:
-        max_score += 1
-
     return max_score
+
+def is_trump(trump_suit, card):
+    if card[0] == 'Jack':
+        if (trump_suit == 'Hearts' or trump_suit == 'Diamonds'):
+            if card[1] == 'Hearts' or card[1] == 'Diamonds':
+                return True
+            else:
+                return False
+        else:
+            if card[1] == 'Clubs' or card[1] == 'Spades':
+                return True
+            else:
+                return False
+    else:
+        return card[1] == trump_suit
 
 def get_remaining_deck(deck, hand):
     new_deck = deck.copy()
@@ -137,6 +160,37 @@ def calculate_all_possible_scores():
     second_round_scores_array = np.array(second_round_scores)
 
     return dealer_scores_array, non_dealer_scores_array, second_round_scores_array
+
+def test():
+    import random
+    hand_size = 5
+    print("Deck size: %s" % len(deck))
+    print("Hand size: %s" % hand_size)
+    print("Calculated combinations: %s" % int(combinations(len(deck), hand_size)))
+    enumerate_hands([], deck, hand_size)
+    print("Enumerated combinations: %s" % len(all_possible_hands))
+
+    hand = [('Jack', 'Clubs'), ('Jack', 'Spades'), ('Ace', 'Hearts'), ('10', 'Hearts'), ('9', 'Hearts')]
+    trump_card = ('9', 'Spades')
+    print("Dealer score: %s" % score_hand_first_round(hand, trump_card, dealer=True))
+    print("Non-dealer score: %s" % score_hand_first_round(hand, trump_card,dealer=False))
+    print("Second round score: %s" % score_hand_second_round(hand))
+
+    for i in range(1, 10):
+        random_hand_index = int(random.random() * len(all_possible_hands))
+        random_hand = all_possible_hands[random_hand_index]
+        print(random_hand)
+        remaining_deck = get_remaining_deck(deck_copy, random_hand)
+        random_trump_card_index = int(random.random() * len(remaining_deck))
+        random_trump_card = remaining_deck[random_trump_card_index]
+        print(random_trump_card)
+        print("Dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
+                                                      dealer=True))
+        print("Non-dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
+                                                          dealer=False))
+        print("Second round score: %s" % score_hand_second_round(random_hand))
+
+
 
 
 
