@@ -32,6 +32,14 @@ def combinations(n, r):
     # https://www.mathplanet.com/education/algebra-2/discrete-mathematics-and-probability/permutations-and-combinations
     return math.factorial(n)/(math.factorial(n - r) * math.factorial(r))
 
+def bernoilles_trials(n, p):
+    total_odds = 0
+    q = 1 - p
+    for i in range(n, 0, -1):
+        odds = p * pow(q, n-i)
+        total_odds += odds
+    return total_odds
+
 def score_card(card, trump_suit):
     score = 0
     if card[1] == trump_suit:
@@ -159,7 +167,28 @@ def calculate_all_possible_scores():
     non_dealer_scores_array = np.array(non_dealer_scores)
     second_round_scores_array = np.array(second_round_scores)
 
-    return dealer_scores_array, non_dealer_scores_array, second_round_scores_array
+    return dealer_scores_array, non_dealer_scores_array, second_round_scores_array, deck_copy, all_possible_hands.copy()
+
+def number_of_cards_in_hand(target, hand):
+    count = 0
+    for card in hand:
+        if target in card:
+            count += 1
+    return count
+
+def number_of_bowers_in_hand(hand):
+    count = 0
+    for card in hand:
+        if card[0] == 'Jack':
+            if card[1] == 'Hearts' or card[1] == 'Diamonds':
+                count += 1
+    return count
+
+def card_in_hand(target_card, hand):
+    for card in hand:
+        if target_card == card:
+            return True
+    return False
 
 def test():
     import random
@@ -170,27 +199,32 @@ def test():
     enumerate_hands([], deck, hand_size)
     print("Enumerated combinations: %s" % len(all_possible_hands))
 
-    hand = [('Jack', 'Clubs'), ('Jack', 'Spades'), ('Ace', 'Hearts'), ('10', 'Hearts'), ('9', 'Hearts')]
-    trump_card = ('9', 'Spades')
-    print("Dealer score: %s" % score_hand_first_round(hand, trump_card, dealer=True))
-    print("Non-dealer score: %s" % score_hand_first_round(hand, trump_card,dealer=False))
-    print("Second round score: %s" % score_hand_second_round(hand))
+    # hand = [('Jack', 'Clubs'), ('Jack', 'Spades'), ('Ace', 'Hearts'), ('10', 'Hearts'), ('9', 'Hearts')]
+    # trump_card = ('9', 'Spades')
+    # print("Dealer score: %s" % score_hand_first_round(hand, trump_card, dealer=True))
+    # print("Non-dealer score: %s" % score_hand_first_round(hand, trump_card,dealer=False))
+    # print("Second round score: %s" % score_hand_second_round(hand))
 
-    for i in range(1, 10):
-        random_hand_index = int(random.random() * len(all_possible_hands))
-        random_hand = all_possible_hands[random_hand_index]
-        print(random_hand)
-        remaining_deck = get_remaining_deck(deck_copy, random_hand)
-        random_trump_card_index = int(random.random() * len(remaining_deck))
-        random_trump_card = remaining_deck[random_trump_card_index]
-        print(random_trump_card)
-        print("Dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
-                                                      dealer=True))
-        print("Non-dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
-                                                          dealer=False))
-        print("Second round score: %s" % score_hand_second_round(random_hand))
+    while True:
+        for i in range(20):
+            random_hand_index = int(random.random() * len(all_possible_hands))
+            random_hand = all_possible_hands[random_hand_index]
+            print(random_hand)
+            print('%s - %s' % (card_in_hand(('Ace', 'Hearts'), random_hand), random_hand))
 
+        # remaining_deck = get_remaining_deck(deck_copy, random_hand)
+        # random_trump_card_index = int(random.random() * len(remaining_deck))
+        # random_trump_card = remaining_deck[random_trump_card_index]
+        # print(random_trump_card)
+        # print("Dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
+        #                                               dealer=True))
+        # print("Non-dealer score: %s" % score_hand_first_round(random_hand, random_trump_card,
+        #                                                   dealer=False))
+        # print("Second round score: %s" % score_hand_second_round(random_hand))
+        # print("Number hearts: %s" % number_of_cards_in_hand('Hearts', random_hand))
+        # print("Number bowers: %s" % number_of_bowers_in_hand(random_hand))
 
+# test()
 
 
 
