@@ -31,17 +31,23 @@ def enumerate_hands(current_hand, current_deck, hand_size):
             new_hand.append(current_card)
             enumerate_hands(new_hand, new_deck, hand_size)
 
+def permutations(n, r):
+    # https://www.mathplanet.com/education/algebra-2/discrete-mathematics-and-probability/permutations-and-combinations
+    # Order of r items is important
+    return math.factorial(n)/math.factorial(n - r)
+
 def combinations(n, r):
     # https://www.mathplanet.com/education/algebra-2/discrete-mathematics-and-probability/permutations-and-combinations
+    # Order of r items is not important
     return math.factorial(n)/(math.factorial(n - r) * math.factorial(r))
 
-def bernoilles_trials(n, p):
-    total_odds = 0
-    q = 1 - p
-    for i in range(n, 0, -1):
-        odds = p * pow(q, n-i)
-        total_odds += odds
-    return total_odds
+def bernoulli_trial(n, k, p):
+    # (n! / k! (n - k)!) * p^k * q^(n-k)
+    # n = number of trials
+    # k = number of successes
+    # p = probably of success
+    # q = 1 - p
+    return (math.factorial(n) / (math.factorial(k) * math.factorial(n-k))) * p**k * (1-p)**(n-k)
 
 def score_card(card, trump_suit):
     score = 0
@@ -185,6 +191,14 @@ def number_of_bowers_in_hand(hand):
         if card[0] == 'Jack':
             if card[1] == 'Hearts' or card[1] == 'Diamonds':
                 count += 1
+    return count
+
+def number_of_9s_and_10s(hand):
+    # Return number of 9s and 10s in this hand, irrespective of trump
+    count = 0
+    for card in hand:
+        if card[0] == '9' or card[0] == '10':
+            count += 1
     return count
 
 def card_in_hand(target_card, hand):
