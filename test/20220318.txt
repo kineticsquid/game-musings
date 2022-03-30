@@ -1,0 +1,4 @@
+JK:	+H 			10C, QS, AH, JD, 9H
+West: 			AC, 10S, KS, AD, KD
+KJ: 			JC, JH, QC, 10D, QD
+East: -10H 		9C, 9S, KH, 10H, JS

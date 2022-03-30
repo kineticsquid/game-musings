@@ -12,5 +12,5 @@
 ```bash
 #!/usr/bin/env bash
 cd ~/DevelopmentEnvironment
-jupyter-lab
+./jupyter-lab
 ```

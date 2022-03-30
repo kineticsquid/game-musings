@@ -1,0 +1,100 @@
+[
+    {
+        "source": "test/20220318.txt",
+        "trump": "Hearts",
+        "trump_caller": "JK",
+        "JK": [
+            [
+                "10",
+                "Clubs"
+            ],
+            [
+                "Queen",
+                "Spades"
+            ],
+            [
+                "Ace",
+                "Hearts"
+            ],
+            [
+                "Jack",
+                "Diamonds"
+            ],
+            [
+                "9",
+                "Hearts"
+            ]
+        ],
+        "West": [
+            [
+                "Ace",
+                "Clubs"
+            ],
+            [
+                "10",
+                "Spades"
+            ],
+            [
+                "King",
+                "Spades"
+            ],
+            [
+                "Ace",
+                "Diamonds"
+            ],
+            [
+                "King",
+                "Diamonds"
+            ]
+        ],
+        "KJ": [
+            [
+                "Jack",
+                "Clubs"
+            ],
+            [
+                "Jack",
+                "Hearts"
+            ],
+            [
+                "Queen",
+                "Clubs"
+            ],
+            [
+                "10",
+                "Diamonds"
+            ],
+            [
+                "Queen",
+                "Diamonds"
+            ]
+        ],
+        "upcard": [
+            "10",
+            "Hearts"
+        ],
+        "dealer": "East",
+        "East": [
+            [
+                "9",
+                "Clubs"
+            ],
+            [
+                "9",
+                "Spades"
+            ],
+            [
+                "King",
+                "Hearts"
+            ],
+            [
+                "10",
+                "Hearts"
+            ],
+            [
+                "Jack",
+                "Spades"
+            ]
+        ]
+    }
+]

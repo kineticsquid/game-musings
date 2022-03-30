@@ -1,0 +1,179 @@
+JK:	+H 			9D, KH, JH, JD, 10H
+West: 			10D, KD, QH, 10S, KS
+KJ: -AH 		**, **, **, **, **
+East: 			AD, QD, 9S, 9C, QC
+
+JK:				AH, JS, QD, KH, AD 
+West: 			10D, QS, 10C, KC, QC
+KJ: 			QH, AS, AC, JC, KS
+East: -9D +D 	10S, 9S, 9D, KD, JH
+
+JK:	-QC +C 		JD, AS, KC, JC, QC
+West: 			AD, AH, KS, AC, 10H
+KJ: 			9D, JS, QS, 9S, 10S
+East: 			KD, JH, 9C, 10C, KH
+
+JK:				JD, KS, AH, AS, 9C 
+West: -AC 		AC, 10S, QH, 9S, JC
+KJ: 			AD, 10H, KH, 10D, QD
+East: +C 		KD, JS, JH, KC, QC
+
+JK:				10S, AD, 9C, QS, 9D
+West: +S 		JH, 9S, 10H, AS, JC
+KJ: -9H 		AH, QD, KD, AC, JS
+East: 			KH, JD, KS, QC, 10C
+
+JK:	+D 			KS, QD, JD, JH, 9C
+West: 			9S, 10H, 10C, AH, QC
+KJ: 			QS, QH, 10D, KD, JC
+East: -AC 		AS, 9H, AD, KH, KC
+
+JK:	-QC +S 		AH, QH, 9D, QS, JS
+West: 			9H, JH, KD, KS, JC
+KJ: 			10H, AS, AD, 10C, 9C
+East: 			KH, 10D, QD, 9S, 10S
+
+JK:				10D, JC, 10H, QS, AH 
+West: -JS 		9D, QC, KH, 10S, KD 
+KJ: +D 			JD, 9C, AD, KS, 9S 
+East: 			JH, 10C, 9H, AS, QH
+
+JK:	+C 			JD, QC, JC, AC, 9C
+West: 			9S, 10H, 9H, 10S, KS
+KJ: -KC 		**, **, **, **, **
+East: 			AD, QD, JS, 9D, QH
+
+JK:	+H 			JH, KH, QH, AD, 10D	
+West: 			10H, 9C, QC, JC, KS
+KJ: 			**, **, **, **, **
+East: -9D 		9H, AH, AC, 9S, JS
+
+JK:	-KS +S 		JH, QS, JC, AH, KS 
+West: 			9C, JD, QC, KH, AD 
+KJ: 			KC, QD, 9S, QH, AS
+East: 			JS, 10D, 9D, 9H, 10H
+
+JK:	+D 			JD, 9H, AS, QD, KH
+West: -QH 		JC, AH, KC, QC, 10C
+KJ: 			9D, JH, KS, 9C, JS
+East: 			AD, 10H, 9S, KD, QS
+
+JK:				9D, 9C, JS, QC, AC
+West: 			10H, JH, KS, QS, 10S
+KJ: -KH +H 		AD, KH, AS, JD, AH
+East: 			KD, QH, QD, JC, KC
+
+JK:				QC, 10D, KC, JS, AC
+West: 			9C, 10C, 9S, AD, AS
+KJ: 			10S, 9H, JH, JD, KD
+East: -QS +S 	KS, AH, 10H, QS, JC
+
+JK:	-AD 		9H, 9C, 9S, 10C, QC
+West: 			9D, 10H, QH, KD, QD
+KJ: +S 			JD, 10S, JS, 10D, AS
+East: 			QS, AC, KS, JH, AH
+
+JK:	-JC +C 		9C, KS, JC, JH, QC
+West: 			AD, QS, AC, 9H, 9D
+KJ: 			JD, 9S, 10S, QD, KD
+East: 			QH, AS, 10C, KC, JS
+
+JK:				KD, QH, 9S, 10S, AS
+West: -QC +C 	QC, JC, AH, AC, 10C
+KJ: 			AD, KC, JH, 9D, KS
+East: 			**, **, **, **, **
+
+JK:				10H, AD, 10C, JC, KC
+West: 			KS, 10D, AH, QD, QC
+KJ: -KH +H 		QS, AC, QH, KH, JD
+East: 			AS, 9H, JH, JS, 9S
+
+JK:	+H 			10C, QS, AH, JD, 9H
+West: 			AC, 10S, KS, AD, KD
+KJ: 			JC, JH, QC, 10D, QD
+East: -10H 		9C, 9S, KH, 10H, JS
+
+JK:	-AC +C 		9S, 10S, QC, AD, AC
+West: 			AS, KS, 9C, KD, QD
+KJ: 			KC, AH, 10D, 9H, 10H
+East: 			QS, JC, JS, 9D, 10C
+
+JK:	+D 			KD, 10S, JD, JS, QS
+West: -AD 		KC, 9D, AD, JC, QC
+KJ: 			**, **, **, **, **
+East: 			AC, KS, 10D, 9C, 10C
+
+JK:				JH, JC, KH, 9C, AD
+West: 			9H, 9S, 10H, 10D, QD
+KJ: -10S 		10C, AS, QC, KS, KC
+East: +C 		AH, AC, QH, JS, KD 
+
+JK:				JH, KH, 10S, 9H, KS
+West: 			9C, JS, AD, 10D, KC
+KJ: 			QH, 10C, JD, QS, AC
+East: -AS +S 	AH, 10H, 9S, JC, AS
+
+JK:	-AS 		10H, JH, QS, KH, QD
+West: +C 		JC, AC, KC, QC, 9H
+KJ: 			9C, 10C, 9D, 10D, AH
+East: 			**, **, **, **, **
+
+JK:				QH, 9S, 9C, JC, KH 
+West: -JD 		AH, KS, KC, JD, 9D
+KJ: 			10H, 10S, 10C, 10D, KD
+East: +D 		JS, AD, AC, QC, JH
+
+JK:	-10C +C 	KD, 10C, QC, KC, AC
+West: 			AS, JD, QD, KS, AH
+KJ: 			9S, 9H, JC, QS, 9C
+East: 			JS, 10D, 9D, QH, KH
+
+JK:				QC, 9H, QS, 10D, QH
+West: -JS 		KC, JH, 10S, AD, KD
+KJ: +C 			JC, AH, AS, 9D, 9C
+East: 			10C, 10H, 9S, JD, KS 
+
+JK:				10D, JH, KC, JD, AD
+West: +S 		JS, AH, QS, 9H, AS
+KJ: -KS 		KS, JC, AC, 9C, QC
+East: 			9S, KH, 9D, KC, QD
+
+JK:				9H, JC, KD, 9D, JD
+West: 			JH, 10H, 10D, AS, KS
+KJ: 			KH, 9C, 9S, JS, QS
+East: -AC +C 	AH, KC, AC, QC, 10C
+
+JK:	-9S +S 		KC, AD, AH, 9S, AS
+West: 			AC, QD, KH, 10S, KS
+KJ: 			10C, JD, 9H, JS, QS
+East: 			9D, KD, 10H, 10D, JH
+
+JK:				9D, AC, 9C, 9S, 10S
+West: -9H 		9H, QH, AD, 10D, KS
+KJ: +H 			JH, QC, QD, 10H, JD
+East: 			10C, KC, KD, JS, AS
+
+JK:	+S 			AC, 10C, AH, JS, 9H
+West: 			10S, 10D, 10H, 9S, QS
+KJ: -AS 		QC, QD, KH, AS, KC
+East: 			9C, KD, QH, JC, KS
+
+JK:				AS, JC, 9C, QC, AC
+West: 			QS, JS, 10S, 10H, KH
+KJ: 			9S, KC, QD, JH, 10H
+East: -KD +D 	KS, 9D, JD, AH, KD
+
+JK:	-AH 		KC, JD, 10S, QD, 10D
+West: +D 		AC, QC, QS, JH, AD
+KJ: 			9C, JC, JS, 10H, 9D
+East: 			9H, KD, AS, KH, QH
+
+JK:				**, **, **, **, ** 
+West: -QH 		AD, 10C, 10S, KC, AC 
+KJ: +D 			JD, JH, QD, 10D, 9S 
+East: 			QS, JS, JC, KS, KH
+
+JK:				QC, 10D, QH, 10S, QS 
+West: 			KC, QD, KH, JS, AS 
+KJ: -AD +D 		AC, JD, AH, AD, 9D 
+East: 			9C, KD, 9S, JC, KS
