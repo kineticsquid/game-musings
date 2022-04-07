@@ -11,6 +11,7 @@ cards = ['9', '10', 'Jack', 'Queen', 'King', 'Ace']
 players = ['JK', 'KJ', 'East', 'West']
 
 data_directory = 'data'
+# For testing
 # data_directory = 'test'
 
 player_regex = r"(\w+):"
