@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # http://www.scrabbleplayers.org/w/NASPA_Zyzzyva_Linux_Installation
-WORD_FILE_NAME = 'NASPA_CSW21.txt'
+WORD_FILE_NAME = '../wordle/NASPA_CSW21.txt'
 
 def get_all_words(petal_letters, mandatory_letter, min_word_length):
     words = open(WORD_FILE_NAME, 'r')
